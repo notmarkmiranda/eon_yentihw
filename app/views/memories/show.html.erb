@@ -1,0 +1,5 @@
+<h1><%= @memory.title %> by <%= @memory.author %></h1>
+
+<%= link_to(image_tag(@memory.image.url(:thumb)), @memory.image.url, target: '_blank') if @memory.image.exists? %>
+
+<p><%= @memory.description %></p>
