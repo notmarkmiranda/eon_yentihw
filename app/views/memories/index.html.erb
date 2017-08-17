@@ -1,6 +1,29 @@
-<h1>Words of Wisdom for the 30 year old bag</h1>
+<div class="container">
+  <div class="jumbotron index-jumbotron">
+  <h1 class="display-3">Words of Wisdom</h1>
+  <p class="lead">for the 30 year old bag</p>
+  <hr class="my-4">
+  <p>This was the brainchild of Torii Jameson Wood</p>
+  <p class="lead">
+    <%= link_to 'Add a New Memory', new_memory_path, class: 'btn btn-primary btn-lg' %>
+  </p>
+</div>
 
-<%= link_to 'Add Memory', new_memory_path %>
-<ul>
-  <%= render @memories %>
-</ul>
+  <section class="no-touch">
+    <div class="wrap">
+
+      <% @memories.each do |memory| %>
+        <div class="box">
+          <%= link_to memory do %>
+            <div class="boxInner">
+                <%= image_tag memory.image.url %>
+                <div class="titleBox"><%= "#{memory.title} by #{memory.author}" %></div>
+            </div>
+          <% end%>
+        </div>
+      <% end %>
+
+  </div>
+</section>
+</div>
+

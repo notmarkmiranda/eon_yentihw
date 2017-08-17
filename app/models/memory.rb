@@ -1,7 +1,8 @@
 class Memory < ApplicationRecord
   has_attached_file :image,
     styles: {
-      thumb: ['300x300#', :jpeg],
+      thumb: ['300x300>', :jpeg],
+      medium: ['650x650>', :jpeg],
       original: [:jpeg]
     },
     convert_options: {

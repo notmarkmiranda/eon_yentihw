@@ -1,24 +1,47 @@
 <%= render 'shared/errors', object: memory %>
+
 <%= form_for memory do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+  <div class="form-group row">
+    <%= f.label :title, class: 'col-sm-3 col-form-label' %>
+    <div class="col-sm-9">
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
   </div>
 
-  <div>
-    <%= f.label :author %>
-    <%= f.text_field :author %>
+  <div class="form-group row">
+    <%= f.label :author, class: 'col-sm-3 col-form-label' %>
+    <div class="col-sm-9">
+      <%= f.text_field :author, class: 'form-control' %>
+    </div>
   </div>
 
-  <div>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+  <div class="form-group row">
+    <%= f.label :description, class: 'col-sm-3 col-form-label' %>
+    <div class="col-sm-9">
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
   </div>
 
-  <div>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+  <div class="form-group row">
+    <%= f.label :image, class: 'col-sm-3 col-form-label' %>
+    <div class="col-sm-9">
+    <%= f.label :image, class: 'custom-file' do %>
+      <%= f.file_field :image, class: 'custom-file-input form-control' %>
+      <span class="custom-file-control" data-content="Choose file..."></span>
+    <% end %>
+    </div>
   </div>
-
-  <%= f.submit %>
+  <div class="d-flex justify-content-end">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+  </div>
 <% end %>
+
+<script>
+  $("input[type=file]").change(function () {
+  var fieldVal = $(this).val();
+  if (fieldVal != undefined || fieldVal != "") {
+    $(this).next(".custom-file-control").attr('data-content', fieldVal);
+  }
+});
+</script>
