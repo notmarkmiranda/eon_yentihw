@@ -10,7 +10,7 @@
       <%= link_to 'Full-Sized Image', @memory.image.url, class: 'btn btn-primary' %>
     </div>
     <div class="card-footer text-muted">
-      <%= "#{time_ago_in_words(@memory.created_at)} ago by #{@memory.author.titleize}" %>
+      <%= "#{time_ago_in_words(@memory.created_at)} ago by #{@memory.author}" %>
     </div>
   </div>
 </div>
