@@ -20,5 +20,6 @@ class Memory < ApplicationRecord
 
   validates_attachment :image,
     content_type: { content_type: /\Aimage\/.*\z/ },
-    size: { less_than: 2.megabytes }
+    size: { less_than: 2.megabytes },
+    presence: true
 end
