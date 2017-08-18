@@ -12,6 +12,11 @@
         <li class="nav-item">
           <%= link_to 'Add Memory', new_memory_path, class: 'nav-link' %>
         </li>
+        <% if current_user %>
+        <li class="nav-item">
+          <%= link_to 'Log Out', logout_path, class: 'nav-link' %>
+        </li>
+        <% end %>
       </ul>
     </div>
 </nav>

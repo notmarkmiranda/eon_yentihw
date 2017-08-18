@@ -19,6 +19,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'paperclip', '~>5.1'
 gem 'aws-sdk'
 gem 'figaro'
+gem 'bcrypt'
 
 group :development, :test do
   gem 'pry'

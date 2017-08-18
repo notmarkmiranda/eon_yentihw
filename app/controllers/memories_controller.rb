@@ -21,6 +21,13 @@ class MemoriesController < ApplicationController
     end
   end
 
+  def destroy
+    memory = Memory.find(params[:id])
+    memory.image.destroy
+    memory.destroy
+    redirect_to memories_path
+  end
+
   private
 
   def memory_params
